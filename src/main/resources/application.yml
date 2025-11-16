@@ -3,7 +3,7 @@ spring:
     name: eureka-server
 
 server:
-  port: 8761
+  port: ${PORT:8761}
 
 eureka:
   client:
@@ -11,3 +11,9 @@ eureka:
     fetch-registry: false
   server:
     enable-self-preservation: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
